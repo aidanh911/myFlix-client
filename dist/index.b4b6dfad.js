@@ -27171,51 +27171,56 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MainView", ()=>MainView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _movieCard = require("../movie-card/movie-card");
+var _s = $RefreshSig$();
 const MainView = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: "Eloquent JavaScript"
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 4,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: "Mastering JavaScript Functional Programming"
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 5,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: "JavaScript: The Good Parts"
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 6,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: "JavaScript: The Definitive Guide"
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: "The Road to React"
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+    _s();
+    const [movies, setMovies] = (0, _react.useState)([
+        {
+            id: 1,
+            title: "Eloquent JavaScript"
+        },
+        {
+            id: 2,
+            title: "Mastering JavaScript Functional Programming"
+        },
+        {
+            id: 3,
+            title: "JavaScript: The Good Parts"
+        },
+        {
+            id: 4,
+            title: "JavaScript: The Definitive Guide"
+        },
+        {
+            id: 5,
+            title: "The Road to React"
+        }
+    ]);
+    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "The list is empty!"
+    }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 3,
+        lineNumber: 15,
+        columnNumber: 16
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                title: movie.title
+            }, movie.id, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 21,
+                columnNumber: 17
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 19,
         columnNumber: 9
     }, undefined);
 };
+_s(MainView, "NBIwIQ5SZIqbW2ndPannmJ3QvNI=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27225,7 +27230,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"MBN2D","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l4Z1W"}],"MBN2D":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"MBN2D","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l4Z1W","react":"21dqq","../movie-card/movie-card":"bwuIu"}],"MBN2D":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27393,6 +27398,37 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"9c44ae1f88b07d6":"1JyNT"}],"lJZlQ":[function() {},{}]},["fjYRu","1X5iG","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"9c44ae1f88b07d6":"1JyNT"}],"bwuIu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$67b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const MovieCard = ({ title })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: title
+    }, void 0, false, {
+        fileName: "src/components/movie-card/movie-card.jsx",
+        lineNumber: 4,
+        columnNumber: 12
+    }, undefined);
+};
+_c = MovieCard;
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$67b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"MBN2D","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"l4Z1W","react":"21dqq"}],"lJZlQ":[function() {},{}]},["fjYRu","1X5iG","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
