@@ -27178,52 +27178,26 @@ var _movieView = require("../movie-view/movie-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "Inception",
-            image: "https://example.com/inception.jpg",
-            director: "Christopher Nolan"
-        },
-        {
-            id: 2,
-            title: "The Shawshank Redemption",
-            image: "https://example.com/shawshank_redemption.jpg",
-            director: "Frank Darabont"
-        },
-        {
-            id: 3,
-            title: "The Godfather",
-            image: "https://example.com/godfather.jpg",
-            director: "Francis Ford Coppola"
-        },
-        {
-            id: 4,
-            title: "Pulp Fiction",
-            image: "https://example.com/pulp_fiction.jpg",
-            director: "Quentin Tarantino"
-        },
-        {
-            id: 5,
-            title: "The Dark Knight",
-            image: "https://example.com/dark_knight.jpg",
-            director: "Christopher Nolan"
-        }
-    ]);
+    const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        fetch("mongodb://localhost:27017").then((response)=>response.json()).then((data)=>{
+            console.log("books from api:", data);
+        });
+    });
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 43,
+        lineNumber: 21,
         columnNumber: 16
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 47,
+        lineNumber: 25,
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27234,16 +27208,16 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 53,
+                lineNumber: 31,
                 columnNumber: 17
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 51,
+        lineNumber: 29,
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "4GY7wJ7mdi62XJ+YMsZ5OerkiGQ=");
+_s(MainView, "TgSjIdlI94qrNk4lWB+JQiSDtI4=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
