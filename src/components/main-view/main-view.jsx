@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
@@ -11,11 +10,16 @@ export const MainView = () => {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
-        fetch("mongodb://localhost:27017").then((response) => response.json())
+        fetch("http://localhost:3001/movies")
+            .then((response) => response.json())
             .then((data) => {
-                console.log("books from api:", data)
+                console.log("Data from server:", data);
+                setMovies(data);
             })
-    })
+            .catch((error) => {
+                console.error("Error fetching movies:", error);
+            });
+    }, []);
 
     if (selectedMovie) {
         return <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />;
@@ -28,7 +32,7 @@ export const MainView = () => {
     return (
         <div>
             {movies.map((movie) => (
-                <MovieCard key={movie.id}
+                <MovieCard key={movie._id}
                            movie={movie}
                            onMovieClick={(newSelectedMovie) => {
                                setSelectedMovie(newSelectedMovie);
